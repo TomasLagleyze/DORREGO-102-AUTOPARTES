@@ -87,8 +87,22 @@ const agregarAlCarrito = (prodId) => {
     const item = arrayDeposito.data.find((prod) => prod.id === prodId)
     carrito.push(item)
 
+
+
   }
+  
   actualizarCarrito()
+
+  //LIBRERIA SWEET ALERT
+
+  Swal.fire({
+    title: "Ha agregado un producto :D",
+    text: `El producto ha sido agregado`,
+    icon: "info",
+    confirmButtonText: 'Entendido',
+    confirmButtonColor: "green",
+    timer: 3000
+})
 }
 //CARRITO PARTE 2
 
@@ -221,3 +235,4 @@ botonLightMode.addEventListener("click", () => {
   document.body.classList.remove("darkMode")
   localStorage.setItem("modoOscuro", false)
 })
+
