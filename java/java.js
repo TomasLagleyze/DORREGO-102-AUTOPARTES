@@ -12,6 +12,7 @@ botonVaciar.addEventListener('click', () => {
 //carrito precio total
 const precioTotal = document.getElementById('precioTotal')
 
+
 //JSON & STORAGE
 document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('carrito')) {
@@ -70,6 +71,7 @@ for (let i of arrayDeposito.data) {
   document.getElementById("deposito").appendChild(card);
 }
 let carrito = []
+
 const agregarAlCarrito = (prodId) => {
 
   const existe = carrito.some(prod => prod.id === prodId)
@@ -87,11 +89,12 @@ const agregarAlCarrito = (prodId) => {
     const item = arrayDeposito.data.find((prod) => prod.id === prodId)
     carrito.push(item)
 
-
+actualizarCarrito()
 
   }
+
   
-  actualizarCarrito()
+
 
   //LIBRERIA SWEET ALERT
 
@@ -124,7 +127,7 @@ const actualizarCarrito = () => {
     <p>${prod.modelo}</p>
     <p>Precio:$${prod.precio}</p>
     <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-    <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+    <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><img class="logo-eliminar" src="./logo/LOGO-ELIMINAR.png" alt=""></button>
     `
 
     contenedorCarrito.appendChild(div)
